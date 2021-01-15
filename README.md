@@ -30,7 +30,7 @@ Detailed install [instructions](https://github.com/joanbono/Snorter#install-inst
 Simply run on your terminal:
 
 ~~~~bash
-git clone https://github.com/joanbono/Snorter.git
+git clone https://github.com/condestable2000/Snorter.git
 cd Snorter/src
 ~~~~
 
