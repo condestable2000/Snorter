@@ -4,6 +4,8 @@
 # Author: Joan Bono (@joan_bono)
 # Version: 1.0.2
 # Last Modified: jbono @ 20180104
+# Modified: @condestable2000
+# 20211501
 
 RED='\033[0;31m'
 ORANGE='\033[0;205m'
@@ -26,7 +28,8 @@ function snort_install() {
 
 	echo -ne "\n\t${CYAN}[i] INFO:${NOCOLOR} Installing dependencies.\n\n"
 	sudo apt-get install -y --force-yes build-essential libpcap-dev libpcre3-dev libdumbnet-dev bison flex zlib1g-dev git locate vim
-
+	sudo apt-get install -y --force-yes libluajit-5.1-dev pkg-config openssl libssl-dev
+	
 	#Downloading DAQ and SNORT
 	cd $HOME && mkdir snort_src && cd snort_src
 	echo -ne "\n\t${CYAN}[i] INFO:${NOCOLOR} Downloading ${BOLD}$DAQ${NOCOLOR}.\n\n"
@@ -570,6 +573,9 @@ function main() {
 #PARSE PARAMETERS/CHECK FOR INTERFACE/CHECK FOR OINKCODE
 
 banner
+
+# Nos aseguramos que está curl instalado
+sudo apt-get install -y --force-yes curl
 
 while getopts ":o:i:" OPTION; do
     case "${OPTION}" in
